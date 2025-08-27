@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Room Booking Page</title>
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" integrity="sha384-tViUnnbYAV00FLIhhi3v/dWt3Jxw4gZQcNoSCxCIFNJVCx7/D55/wXsrNIRANwdD" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-custom">
+        <div class="container">
+            <a class="navbar-brand " href="#"><img class="rounded-2" src="/assets/WhatsApp Image 2025-08-16 at 11.46.28_7f3c1635.jpg" alt="" style="width: 50px; height: 50px;"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="gallery/gallery.html">Gallery</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about/about.html">About us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact/contact.html">Contact us</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="hero-text">
+                <h1>Find Your Perfect Room<br><span class="highlight">in Seconds</span></h1>
+                <p>Seamless room booking for work, travel, or stay—<br>anywhere, anytime.</p>
+            </div>
+
+            <!-- Booking Form -->
+            <div class="booking-form p-4 rounded-4 shadow-lg bg-white">
+                <form>
+                    <div class="row g-3 align-items-end">
+                        <div class="col-md-4">
+                            <label for="checkin" class="form-label ms-2" style="color : black; font-size: 13px;">Check In</label>
+                            <input type="date" class="form-control" id="checkin">
+                        </div>
+                        <div class="col-md-4">
+                            <label for="checkout" class="form-label ms-2 text-dark" style="font-size: 13px;">Check Out</label>
+                            <input type="date" class="form-control" id="checkout">
+                        </div>
+                        <div class="col-md-4 ">
+                            <!-- Your dropdown here -->
+                            <div class="dropdown rounded-2 bg-white ">
+                                <div class="dropdown-toggle text-dark" id="dropdownToggle">
+                                    👤 2 Adult / 1 Child / 1 Room
+                                </div>
+                                <div class="dropdown-menu rounded-4 p-4" id="dropdownMenu">
+                                    <div class="counter-row">
+                                        <span>Room</span>
+                                        <div class="counter-controls">
+                                            <button onclick="changeValue('room', -1)">−</button>
+                                            <span id="roomCount">1</span>
+                                            <button onclick="changeValue('room', 1)">+</button>
+                                        </div>
+                                    </div>
+                                    <div class="counter-row">
+                                        <span>Adult</span>
+                                        <div class="counter-controls">
+                                            <button onclick="changeValue('adult', -1)">−</button>
+                                            <span id="adultCount">2</span>
+                                            <button onclick="changeValue('adult', 1)">+</button>
+                                        </div>
+                                    </div>
+                                    <div class="counter-row">
+                                        <span>Child</span>
+                                        <div class="counter-controls">
+                                            <button onclick="changeValue('child', -1)">−</button>
+                                            <span id="childCount">1</span>
+                                            <button onclick="changeValue('child', 1)">+</button>
+                                        </div>
+                                    </div>
+                                    <button class="apply-btn" onclick="applySelection()">Apply</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-12 text-center">
+                            <a href="rooms.html" class="btn btn-primary search-botton" style="padding: 15px 80px;">Search</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- About us section -->
+
+
+    <section class="about-section">
+        <div class="image-container">
+            <img src="assets/Relaxing Tropical Haven in Neutral Hues 1.webp" alt="Room 1" class="img1" />
+            <img src="assets/download (55) 1.webp" alt="Room 2" class="img2" />
+        </div>
+        <div class="text-container">
+            <span class="tag">ABOUT US</span>
+            <h2>
+                Your Trusted Partner in Comfortable<br />
+                & <span class="highlight">Convenient Stays</span>
+            </h2>
+            <p>
+                We are a digital-first room booking platform dedicated to making your travel and work stay smoother.
+                From cozy homestays to corporate rooms, we connect you with verified hosts across cities with real-time
+                availability and add-on amenities.
+            </p>
+            <a href="#" class="btn">Read more</a>
+        </div>
+    </section>
+
+    <!-- service section -->
+
+    <section class="services-section">
+        <div class="container">
+            <center> <span class="tag">FACILITIES</span>
+            <h2>Services Designed for Comfort<br>and Control</h2>
+</center>
+           
+            <div class="services-grid">
+                <!-- Card 1 -->
+                <div class="service-card">
+                    <div class="service-text">
+                        <h3>Room Booking</h3>
+                        <p>Real-time availability across budget to premium rooms.</p>
+                    </div>
+                    <img src="assets/hostel_5698066 1.webp" alt="Room Booking">
+                </div>
+
+                <!-- Card 2 -->
+                <div class="service-card">
+                    <div>
+                        <h3>High-Speed WiFi</h3>
+                        <p>Stay connected with seamless internet services.</p>
+                    </div>
+                    <img src="assets/image 8.webp" alt="WiFi">
+                </div>
+
+                <!-- Card 3 -->
+                <div class="service-card">
+                    <div>
+                        <h3>Air Conditioning</h3>
+                        <p>All rooms equipped with powerful air conditioning.</p>
+                    </div>
+                    <img src="assets/image 9.webp" alt="AC">
+                </div>
+
+                <!-- Card 4 -->
+                <div class="service-card">
+                    <div>
+                        <h3>Power Backup</h3>
+                        <p>No more blackouts—24/7 uninterrupted power</p>
+                    </div>
+                    <img src="assets/image 10.webp" alt="Power Backup">
+                </div>
+
+                <!-- Card 5 -->
+                <div class="service-card">
+                    <div>
+                        <h3>Smart Key Access</h3>
+                        <p>Digital key insertion system for enhanced safety.</p>
+                    </div>
+                    <img src="assets/image 11.webp" alt="Smart Key">
+                </div>
+
+                <!-- Card 6 -->
+                <div class="service-card">
+                    <div>
+                        <h3>Hot Water Facility</h3>
+                        <p>Instant hot showers to start your day right.</p>
+                    </div>
+                    <img src="assets/image 12.webp" alt="Hot Water">
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- photo section -->
+
+
+    <section class="popular-section">
+        <div class="popular-container">
+            <span class="tag">POPULAR PLACES</span>
+
+            <h2 class="popular-title">Discover more popular places here.</h2>
+
+            <div class="popular-row">
+                <div class="popular-card">
+                    <img src="assets/image.webp" alt="Munnar" />
+                    <div class="popular-label">munnar</div>
+                </div>
+                <div class="popular-card">
+                    <img src="assets/image (2).webp" alt="Kanthalloor" />
+                    <div class="popular-label">Kanthalloor</div>
+                </div>
+                <div class="popular-card">
+                    <img src="assets/image (1).webp" alt="Valparai" />
+                    <div class="popular-label">Valparai</div>
+                </div>
+                <div class="popular-card">
+                    <img src="assets/image (3).webp" alt="Kodaikanal" />
+                    <div class="popular-label">Kodaikanal</div>
+                </div>
+            </div>
+
+            <div class="popular-row">
+                <div class="popular-card row-card">
+                    <img src="assets/image (4).webp" alt="Marayoor" />
+                    <div class="popular-label">Marayoor</div>
+                </div>
+                <div class="popular-card row-card">
+                    <img src="assets/image (5).webp" alt="Amaravathi Dam" />
+                    <div class="popular-label">Amaravathi Dam</div>
+                </div>
+                <div class="popular-card row-card">
+                    <img src="assets/image (6).webp" alt="Thirumoorthy hills" />
+                    <div class="popular-label">Thirumoorthy hills</div>
+                </div>
+            </div>
+
+            <div class="popular-row">
+                <div class="popular-card">
+                    <img src="assets/image (7).webp" alt="Athirappilly" />
+                    <div class="popular-label">Athirappilly</div>
+                </div>
+                <div class="popular-card">
+                    <img src="assets/image (8).webp" alt="Vagamon" />
+                    <div class="popular-label">Vagamon</div>
+                </div>
+                <div class="popular-card">
+                    <img src="assets/image (9).webp" alt="Nelliyampathy" />
+                    <div class="popular-label">Nelliyampathy</div>
+                </div>
+                <div class="popular-card">
+                    <img src="assets/image (10).webp" alt="Agasthyamalai" />
+                    <div class="popular-label">Agasthyamalai</div>
+                </div>
+            </div>
+
+            <div class="popular-img">
+                <img src="assets/Group 33919.webp" alt="">
+            </div>
+    </section>
+
+    <!-- why us section -->
+
+
+    <section class="why-us-section">
+        <div class="why-us-container">
+            <div class="why-us-image">
+                <img src="assets/Frame 1000003721.webp" alt="Comfort Priority" />
+                <!-- <div class="why-us-badge">
+                    <span>Your Comfort,<br>Our Priority</span>
+                </div> -->
+            </div>
+
+            <div class="why-us-content">
+                <h2 class="why-us-title">
+                    Why <span class="highlight">Choose Us?</span>
+                </h2>
+                <p class="why-us-description">
+                    We don’t just offer rooms — we deliver peace of mind with every booking.
+                </p>
+
+                <div class="features-grid ">
+                    <div class="feature-box feature-box-1">
+                        ✅ <strong>Verified Hosts</strong>
+                        <p>All listings are manually verified for quality and safety.</p>
+                    </div>
+                    <div class="feature-box feature-box-2">
+                        📞 <strong>24/7 Support</strong>
+                        <p>Our team is always here to help, day or night.</p>
+                    </div>
+                    <div class="feature-box feature-box-1">
+                        🌐 <strong>Multi-Device Access</strong>
+                        <p>Book and manage your stays across mobile, tablet, or desktop.</p>
+                    </div>
+                    <div class="feature-box feature-box-2">
+                        🧾 <strong>Transparent Pricing</strong>
+                        <p>No hidden fees. What you see is what you pay.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- room section -->
+
+    <!-- 
+    <section class="rooms-section">
+        <span class="tagline">Luxury Experience</span>
+        <h2 class="section-title">Rooms & Suites</h2>
+
+        <div class="card-container">
+            <div class="room-card">
+                <img src="Rectangle 10391.png" alt="Standard Room">
+                <div class="room-title">Standard Room</div>
+                <button class="view-btn">View</button>
+            </div>
+
+            <div class="room-card">
+                <img src="Rectangle 10392.png" alt="Deluxe Room">
+                <div class="room-title">Deluxe Room</div>
+                <button class="view-btn">View</button>
+            </div>
+
+            <div class="room-card">
+                <img src="Rectangle 10393.png" alt="Executive Suite">
+                <div class="room-title">Executive Suite</div>
+                <button class="view-btn">View</button>
+            </div>
+        </div>
+    </section> -->
+
+    <div class="container text-center">
+        <span class="tagline">LUXURY EXPERIENCE</span>
+        <h2 class="section-title">Rooms & Suites</h2>
+
+        <div class="row g-4">
+            <!-- Card 1 -->
+            <div class="col-lg-4 col-md-6">
+                <div class="room-card">
+                    <img src="assets/Rectangle 10391.webp" alt="Standard Room" />
+                    <div class="room-title">Standard Room</div>
+                    <button class="view-btn">View</button>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="col-lg-4 col-md-6">
+                <div class="room-card">
+                    <img src="assets/Rectangle 10392.webp" alt="Deluxe Room" />
+                    <div class="room-title">Deluxe Room</div>
+                    <button class="view-btn">View</button>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="col-lg-4 col-md-12">
+                <div class="room-card">
+                    <img src="assets/Rectangle 10393.webp" alt="Executive Suite" />
+                    <div class="room-title">Executive Suite</div>
+                    <button class="view-btn">View</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- testimonial -->
+
+
+
+    <div class="container py-5 text-center">
+        <span class="section-tag">TESTIMONIALS</span>
+        <h2 class="section-heading">What Our <span>Happy Members Say</span></h2>
+
+        <div class="row mt-5 g-4">
+            <!-- Card 1 -->
+            <div class="col-lg-3 col-md-6">
+                <div class="testimonial-card">
+                    <p class="testimonial-text">
+                        I met my life partner within just two weeks of signing up. The platform felt safe and the
+                        matches were genuine. Truly grateful!"
+                    </p>
+                    <div class="testimonial-footer">
+                        <img src="assets/Rectangle 4192.webp" alt="Ankit" />
+                        <div>
+                            <div class="name">Ankit</div>
+                            <div class="stars">★★★★★</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="col-lg-3 col-md-6">
+                <div class="testimonial-card">
+                    <p class="testimonial-text">
+                        I loved the privacy and the user-friendly interface. It made searching easy and meaningful.
+                        Thank you for helping us find each other
+                    </p>
+                    <div class="testimonial-footer">
+                        <img src="assets/Rectangle 4194.webp" alt="Siddharth" />
+                        <div>
+                            <div class="name">Siddharth</div>
+                            <div class="stars">★★★★☆</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="col-lg-3 col-md-6">
+                <div class="testimonial-card">
+                    <p class="testimonial-text">
+                        We matched through the app and clicked instantly. The verification process gave us peace of
+                        mind. Now, we’re planning our wedding.
+                    </p>
+                    <div class="testimonial-footer">
+                        <img src="assets/Rectangle 4197.webp" alt="Harish" />
+                        <div>
+                            <div class="name">Harish</div>
+                            <div class="stars">★★★★☆</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="col-lg-3 col-md-6">
+                <div class="testimonial-card">
+                    <p class="testimonial-text">
+                        I met my life partner within just two weeks of signing up. The platform felt safe and the
+                        matches were genuine. Truly grateful!"
+                    </p>
+                    <div class="testimonial-footer">
+                        <img src="assets/Rectangle 4198.webp" alt="Lakshmi" />
+                        <div>
+                            <div class="name">Lakshmi</div>
+                            <div class="stars">★★★★☆</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <!-- footer -->
+
+
+    <footer class="footer">
+        <div class="container">
+            <div class="row gy-5">
+                <!-- Column 1 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="footer-logo">
+                        <img src="assets/g4712.webp" alt="Logo" />
+                        <h5 class="mb-0 fw-bold">mangcoding</h5>
+                    </div>
+                    <p class="footer-description">
+                        Lörem ipsum od ohet dilogi. Bell trabel, samuligt, ohöbel utom diska. Jinesade bel när feras
+                        redorade i belogi.
+                    </p>
+                   
+
+                    <div class="social-icons">
+
+                        <a href="https://www.facebook.com"><i class="fab fa-facebook-f"></i></a>
+
+                        <a href="https://www.twitter.com"><i class="fab fa-twitter"></i></a>
+
+                        <a href="https://www.instagram.com"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com"><i class="fab fa-linkedin-in"></i></a>
+
+                    </div>
+                </div>
+
+                <!-- Column 2 -->
+                <div class="col-lg-2 col-md-6">
+                    <h6 class="fw-bold mb-3">Pages</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="#">Home it work</a></li>
+                        <li><a href="#">Pricing</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Demo</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3 -->
+                <div class="col-lg-2 col-md-6">
+                    <h6 class="fw-bold mb-3">Service</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="#">Shopify</a></li>
+                        <li><a href="#">WordPress</a></li>
+                        <li><a href="#">UI/UX Design</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 4 -->
+                <div class="col-lg-4 col-md-6">
+                    <h6 class="fw-bold mb-3">Contact</h6>
+                    <ul class="list-unstyled contact">
+                        <li class="mb-2"><i class="fas fa-phone "></i>  +91 63801 66754 +91 95669 92118</li>
+                        <li class="mb-2"><i class="fas fa-envelope"></i> aradhanaresidency @gmail.com</li>
+                        <li><i class="fas fa-map-marker-alt"></i> No 4 /144/ 39, Dhali Road, Pallapalayam, Udumalpet, 642 112, Tiruppir Dt.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js">
+
+
+    </script>
+    <script src="script.js"></script>
+</body>
+
+</html>

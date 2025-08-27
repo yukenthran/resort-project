@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Room Grid</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .navbar-custom {
+            background-color: #007bff;
+        }
+
+        .navbar-brand {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #fff;
+        }
+
+        .nav-link {
+            color: #ffffff !important;
+            font-weight: 500;
+            margin-left: 20px;
+        }
+
+        .nav-link:hover {
+            text-decoration: underline;
+        }
+
+        .room-card img {
+            border-radius: 10px;
+            object-fit: cover;
+            height: 200px;
+            width: 100%;
+        }
+
+        .badge-discount {
+            background-color: #ff6b00;
+            color: #fff;
+            font-size: 0.75rem;
+            padding: 0.3rem 0.6rem;
+            border-radius: 0.3rem;
+        }
+
+        .feature-icons {
+            font-size: 0.9rem;
+            color: #555;
+        }
+
+        .price {
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .btn-book {
+            background-color: #0066ff;
+            color: #fff;
+            font-weight: 600;
+        }
+
+        .btn-book:hover {
+            background-color: #0052cc;
+        }
+
+        .footer {
+            background-color: #032b5a;
+            color: #fff;
+            padding: 60px 0;
+        }
+
+        .footer a {
+            color: #cbd5e1;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            color: #ffffff;
+        }
+
+        .footer .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .footer .footer-logo img {
+            width: 40px;
+        }
+
+        .footer .footer-description {
+            margin: 20px 0;
+            color: #cbd5e1;
+            font-size: 15px;
+            line-height: 1.6;
+        }
+
+        .social-icons a {
+            display: inline-block;
+            margin-right: 10px;
+            color: #cfcccc;
+            font-size: 24px;
+        }
+
+        .social-icons a:hover {
+            color: #ff0000;
+        }
+
+        .footer .list-unstyled li {
+            margin-bottom: 12px;
+        }
+
+        .footer .contact i {
+            width: 25px;
+        }
+
+        @media (max-width: 767.98px) {
+            .footer {
+                text-align: center;
+            }
+
+            .footer .footer-logo {
+                justify-content: center;
+            }
+
+            .footer .social-icons {
+                justify-content: center;
+            }
+        }
+
+        .modal-content {
+            border-radius: 15px;
+            padding: 30px;
+        }
+
+        .modal-header {
+            border-bottom: none;
+            text-align: center;
+            width: 100%;
+            display: block;
+        }
+
+        .form-control {
+            border-radius: 10px;
+        }
+
+        .btn-primary {
+            border-radius: 10px;
+            padding: 8px 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-custom">
+        <div class="container">
+            <a class="navbar-brand " href="#"><img class="rounded-2" src="/assets/WhatsApp Image 2025-08-16 at 11.46.28_7f3c1635.jpg" alt="" style="width: 50px; height: 50px;"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="/index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/gallery/gallery.html">Gallery</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about/about.html">About us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact/contact.html">Contact us</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container py-5">
+        <div class="row g-4">
+
+            <div class="col-md-6 col-lg-3">
+                <div class="room-card">
+                    <img src="/gallery assets/Rectangle 10423.png" alt="Room" class="img-fluid"/>
+                    <div class="mt-2">
+                        <span class="badge-discount"><i class="fa fa-tags"></i> 10% OFF</span>
+                        <h6 class="fw-bold mt-2">Deluxe Room with Balcony View</h6>
+                        <div class="feature-icons mb-2">
+                            <i class="fa fa-bed"></i> Queen Bed
+                            &nbsp;&nbsp;<i class="fa fa-wifi"></i> Free WiFi
+                            &nbsp;&nbsp;<i class="fa fa-snowflake"></i> AC
+                        </div>
+                        <div class="mb-2">
+                            <span class="price">₹2,500</span> <small>/ night</small>
+                        </div>
+                        <button type="button" class="btn btn-book w-100" data-bs-toggle="modal"
+                            data-bs-target="#bookingModal">
+                            Book Now
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="room-card">
+                    <img src="gallery assets/Rectangle 10426.png" alt="Room" class="img-fluid"/>
+                    <div class="mt-2">
+                        <span class="badge-discount"><i class="fa fa-tags"></i> 10% OFF</span>
+                        <h6 class="fw-bold mt-2">Deluxe Room with Balcony View</h6>
+                        <div class="feature-icons mb-2">
+                            <i class="fa fa-bed"></i> Queen Bed
+                            &nbsp;&nbsp;<i class="fa fa-wifi"></i> Free WiFi
+                            &nbsp;&nbsp;<i class="fa fa-snowflake"></i> AC
+                        </div>
+                        <div class="mb-2">
+                            <span class="price">₹2,500</span> <small>/ night</small>
+                        </div>
+                        <button type="button" class="btn btn-book w-100" data-bs-toggle="modal"
+                            data-bs-target="#bookingModal">
+                            Book Now
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="room-card">
+                    <img src="gallery assets/Rectangle 10428.png" alt="Room" class="img-fluid"/>
+                    <div class="mt-2">
+                        <span class="badge-discount"><i class="fa fa-tags"></i> 10% OFF</span>
+                        <h6 class="fw-bold mt-2">Deluxe Room with Balcony View</h6>
+                        <div class="feature-icons mb-2">
+                            <i class="fa fa-bed"></i> Queen Bed
+                            &nbsp;&nbsp;<i class="fa fa-wifi"></i> Free WiFi
+                            &nbsp;&nbsp;<i class="fa fa-snowflake"></i> AC
+                        </div>
+                        <div class="mb-2">
+                            <span class="price">₹2,500</span> <small>/ night</small>
+                        </div>
+                        <button type="button" class="btn btn-book w-100" data-bs-toggle="modal"
+                            data-bs-target="#bookingModal">
+                            Book Now
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="room-card">
+                    <img src="gallery assets/Rectangle 10429.png" alt="Room" class="img-fluid"/>
+                    <div class="mt-2">
+                        <span class="badge-discount"><i class="fa fa-tags"></i> 10% OFF</span>
+                        <h6 class="fw-bold mt-2">Deluxe Room with Balcony View</h6>
+                        <div class="feature-icons mb-2">
+                            <i class="fa fa-bed"></i> Queen Bed
+                            &nbsp;&nbsp;<i class="fa fa-wifi"></i> Free WiFi
+                            &nbsp;&nbsp;<i class="fa fa-snowflake"></i> AC
+                        </div>
+                        <div class="mb-2">
+                            <span class="price">₹2,500</span> <small>/ night</small>
+                        </div>
+                        <button type="button" class="btn btn-book w-100" data-bs-toggle="modal"
+                            data-bs-target="#bookingModal">
+                            Book Now
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="room-card">
+                    <img src="gallery assets/Rectangle 10423.png" alt="Room" class="img-fluid"/>
+                    <div class="mt-2">
+                        <span class="badge-discount"><i class="fa fa-tags"></i> 10% OFF</span>
+                        <h6 class="fw-bold mt-2">Deluxe Room with Balcony View</h6>
+                        <div class="feature-icons mb-2">
+                            <i class="fa fa-bed"></i> Queen Bed
+                            &nbsp;&nbsp;<i class="fa fa-wifi"></i> Free WiFi
+                            &nbsp;&nbsp;<i class="fa fa-snowflake"></i> AC
+                        </div>
+                        <div class="mb-2">
+                            <span class="price">₹2,500</span> <small>/ night</small>
+                        </div>
+                        <button type="button" class="btn btn-book w-100" data-bs-toggle="modal"
+                            data-bs-target="#bookingModal">
+                            Book Now
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="room-card">
+                    <img src="gallery assets/Rectangle 10426.png" alt="Room" class="img-fluid"/>
+                    <div class="mt-2">
+                        <span class="badge-discount"><i class="fa fa-tags"></i> 10% OFF</span>
+                        <h6 class="fw-bold mt-2">Deluxe Room with Balcony View</h6>
+                        <div class="feature-icons mb-2">
+                            <i class="fa fa-bed"></i> Queen Bed
+                            &nbsp;&nbsp;<i class="fa fa-wifi"></i> Free WiFi
+                            &nbsp;&nbsp;<i class="fa fa-snowflake"></i> AC
+                        </div>
+                        <div class="mb-2">
+                            <span class="price">₹2,500</span> <small>/ night</small>
+                        </div>
+                        <button type="button" class="btn btn-book w-100" data-bs-toggle="modal"
+                            data-bs-target="#bookingModal">
+                            Book Now
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="room-card">
+                    <img src="gallery assets/Rectangle 10428.png" alt="Room" class="img-fluid"/>
+                    <div class="mt-2">
+                        <span class="badge-discount"><i class="fa fa-tags"></i> 10% OFF</span>
+                        <h6 class="fw-bold mt-2">Deluxe Room with Balcony View</h6>
+                        <div class="feature-icons mb-2">
+                            <i class="fa fa-bed"></i> Queen Bed
+                            &nbsp;&nbsp;<i class="fa fa-wifi"></i> Free WiFi
+                            &nbsp;&nbsp;<i class="fa fa-snowflake"></i> AC
+                        </div>
+                        <div class="mb-2">
+                            <span class="price">₹2,500</span> <small>/ night</small>
+                        </div>
+                        <button type="button" class="btn btn-book w-100" data-bs-toggle="modal"
+                            data-bs-target="#bookingModal">
+                            Book Now
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="room-card">
+                    <img src="gallery assets/Rectangle 10429.png" alt="Room" class="img-fluid"/>
+                    <div class="mt-2">
+                        <span class="badge-discount"><i class="fa fa-tags"></i> 10% OFF</span>
+                        <h6 class="fw-bold mt-2">Deluxe Room with Balcony View</h6>
+                        <div class="feature-icons mb-2">
+                            <i class="fa fa-bed"></i> Queen Bed
+                            &nbsp;&nbsp;<i class="fa fa-wifi"></i> Free WiFi
+                            &nbsp;&nbsp;<i class="fa fa-snowflake"></i> AC
+                        </div>
+                        <div class="mb-2">
+                            <span class="price">₹2,500</span> <small>/ night</small>
+                        </div>
+                        <button type="button" class="btn btn-book w-100" data-bs-toggle="modal"
+                            data-bs-target="#bookingModal">
+                            Book Now
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="bookingModal" tabindex="-1" aria-labelledby="bookingModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content text-center">
+                <div class="modal-header">
+                    <h5 class="modal-title w-100" id="bookingModalLabel">Request to book</h5>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3 text-start">
+                            <label for="email" class="form-label">E-Mail</label>
+                            <input type="email" class="form-control" id="email" placeholder="example@gmail.com"
+                                required>
+                        </div>
+                        <div class="mb-3 text-start">
+                            <label for="phone" class="form-label">Phone</label>
+                            <input type="tel" class="form-control" id="phone" placeholder="123-456-7890" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary" data-bs-toggle="modal1"
+                            data-bs-target="#submitbtn">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="submitbtn" tabindex="-1" aria-labelledby="bookingModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content text-center">
+                <div class="modal-header">
+                    <h2>Booking Request Submitted Successfully!</h2>
+                </div>
+                <div class="modal-body">
+                    <p>Our staff will contact you within 2 hours to confirm your reservation.
+                        For urgent inquiries, call us directly at +91 98765 43210.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="row gy-5">
+                <div class="col-lg-4 col-md-6">
+                    <div class="footer-logo">
+                        <img src="assets/g4712.webp" alt="Logo" />
+                        <h5 class="mb-0 fw-bold">mangcoding</h5>
+                    </div>
+                    <p class="footer-description">
+                        Lörem ipsum od ohet dilogi. Bell trabel, samuligt, ohöbel utom diska.
+                    </p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <h6 class="fw-bold mb-3">Pages</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Pricing</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Demo</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <h6 class="fw-bold mb-3">Service</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="#">Shopify</a></li>
+                        <li><a href="#">WordPress</a></li>
+                        <li><a href="#">UI/UX Design</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <h6 class="fw-bold mb-3">Contact</h6>
+                    <ul class="list-unstyled contact">
+                        <li class="mb-2"><i class="fas fa-phone"></i>+91 63801 66754 +91 95669 92118</li>
+                        <li class="mb-2"><i class="fas fa-envelope"></i> aradhanaresidency @gmail.com</li>
+                        <li><i class="fas fa-map-marker-alt"></i>  No 4 /144/ 39, Dhali Road, Pallapalayam, Udumalpet, 642 112, Tiruppir Dt.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
