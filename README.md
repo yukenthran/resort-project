@@ -28,7 +28,7 @@ _Add your project screenshots here_
 ---
 
 ## 🚀 Live Demo
-[Click here to view the live demo](#)  
+https://yukenthran.github.io/resort-project/
 (Replace `#` with your GitHub Pages or hosting link)
 
 ---
